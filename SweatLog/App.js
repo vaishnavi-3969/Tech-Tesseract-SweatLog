@@ -1,24 +1,35 @@
 import { StatusBar } from 'expo-status-bar';
-import { Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import exercises from './assets/data/exercises.json';
-import { StyleSheet } from 'react-native';
-import { styled } from 'nativewind';
 
-
-const StyledView = styled(View);
-const StyledText = styled(Text);
 
 export default function App() {
   const exercise = exercises[0];
-  
+
   return (
-    <StyledView className='items-center justify-center flex-1'>
-      <StyledText className='text-slate-800'>{exercise.name}</StyledText>
-      <StyledText>Muscle: {exercise.muscle} | Equipment: {exercise.equipment}</StyledText>
+    <View style={styles.container}>
+      <View style={styles.exerciseContainer}>
+
+        <Text style={{ fontSize: 20, fontWeight: '700' }}>{exercise.name}</Text>
+        <Text style={{ color: 'dimgray' }}>Muscle: {exercise.muscle.toUpperCase()} | Equipment: {exercise.equipment}</Text>
+      </View>
       <StatusBar style="auto" />
-    </StyledView>
+    </View>
   );
 }
 
-
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'gainsboro',
+    justifyContent: 'center',
+    padding: 10,
+  },
+  exerciseContainer: {
+    backgroundColor: 'white',
+    padding: 10,
+    borderRadius: 10,
+    gap: 5,
+  }
+})
 
