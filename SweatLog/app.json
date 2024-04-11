@@ -2,12 +2,12 @@
   "expo": {
     "name": "SweatLog",
     "slug": "SweatLog",
+    "scheme":"workouts",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/logo.png",
     "userInterfaceStyle": "light",
     "splash": {
-      // "image": "./assets/image/logo.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -16,7 +16,7 @@
     ],
     "ios": {
       "supportsTablet": true
-    },
+    }, 
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/logo.png",
@@ -24,7 +24,9 @@
       }
     },
     "web": {
-      "favicon": "./assets/images/logo.png"
-    }
+      "favicon": "./assets/images/logo.png",
+      "bundler": "metro"
+    },
+    "plugins": ["expo-router"]
   }
 }

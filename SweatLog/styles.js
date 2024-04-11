@@ -24,6 +24,9 @@ const styles = StyleSheet.create({
     exerciseDetails: {
       color: 'dimgray',
     },
+    subValue : {
+      textTransform: 'uppercase'
+    }
     
   })
 
