@@ -1,19 +1,35 @@
-import { View, Text, StyleSheet, TextInput, Button } from 'react-native'
-import React from 'react'
-import { useState } from 'react';
+import { View, TextInput, Button, StyleSheet } from 'react-native';
+import React, { useState } from 'react';
+import { getDatabase, ref, push } from "firebase/database";
+import { app } from '../components/config';
 
 export default function NewSetInput() {
-  const [reps, setReps] = useState();
-  const [weight, setWeight] = useState();
+  const [reps, setReps] = useState('');
+  const [weight, setWeight] = useState('');
 
+  const db = getDatabase(app);
 
   const addSet = () => {
     console.warn("Add Set", reps, weight);
 
-    //save data to db
+    // Save data to Firebase
+    saveSetToFirebase(reps, weight);
 
+    // Clear input fields after adding set
     setReps('');
-    setWeight('')
+    setWeight('');
+  }
+
+  const saveSetToFirebase = (reps, weight) => {
+    const setsRef = ref(db, 'sets');
+    push(setsRef, {
+      reps: reps,
+      weight: weight
+    }).then(() => {
+      console.log('Set added to Firebase');
+    }).catch((error) => {
+      console.error('Error adding set to Firebase: ', error);
+    });
   }
 
   return (
@@ -33,7 +49,6 @@ export default function NewSetInput() {
         keyboardType='numeric'
       />
       <Button
-        style={styles.button}
         title='Add'
         onPress={addSet}
       />
@@ -50,14 +65,9 @@ const styles = StyleSheet.create({
   },
   input: {
     borderWidth: 1,
-    borderRadius: 'gainsboro',
+    borderRadius: 5,
     padding: 10,
     flex: 1,
-    borderRadius: 5,
+    marginHorizontal: 5,
   },
-})
-
-
-
-
-
+});
