@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
-
+import { auth } from '../components/config';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 export default function SignupScreen({ navigation }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSignup = () => {
-    app.auth().createUserWithEmailAndPassword(email, password)
-      .then((userCredential) => {
-        console.log('User signed up:', userCredential.user);
-      })
-      .catch((error) => {
-        console.error('Error signing up:', error.message);
-      });
+  const handleSignup = async () => {
+    if (email && password) {
+      try {
+        await createUserWithEmailAndPassword(auth, email, password);
+        navigation.navigate('Login');
+      } catch (err) {
+        console.log('error: ', err.message)
+      }
+    }
   };
 
   return (
@@ -44,6 +46,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#F6E8EA',
   },
   title: {
     fontSize: 24,
