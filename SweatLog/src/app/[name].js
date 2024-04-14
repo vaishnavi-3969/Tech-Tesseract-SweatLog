@@ -1,9 +1,10 @@
 import { useLocalSearchParams } from 'expo-router';
-import { View, Text, ScrollView } from 'react-native'
+import { View, Text, ScrollView, StyleSheet } from 'react-native'
 import exercises from '../../assets/data/exercises.json';
 import styles from '../../styles';
 import { Stack } from "expo-router";
 import { useState } from 'react';
+import NewSetInput from '../components/NewSetInput';
 
 export default function ExerciseDetailsScreen() {
   const params = useLocalSearchParams();
@@ -14,7 +15,7 @@ export default function ExerciseDetailsScreen() {
     return <Text>Exercise not found!</Text>
   }
   return (
-    <ScrollView contentContainerStyle={styles.container}>
+    <ScrollView contentContainerStyle={style.container}>
       <Stack.Screen
         options={{ title: exercise.name }}
       />
@@ -26,15 +27,26 @@ export default function ExerciseDetailsScreen() {
         </Text>
       </View>
 
-      <ScrollView style={styles.panel}>
+      <View style={styles.panel}>
         <Text style={styles.instructions} numberOfLines={isIntructionExpanded ? 0 : 3}>
           {exercise.instructions}
         </Text>
         <Text onPress={() => setIsInstructionExpanded(!isIntructionExpanded)} style={styles.seeMore}>
           {isIntructionExpanded ? "See Less" : "See More"}
         </Text>
-      </ScrollView>
+      </View>
+
+      <NewSetInput/>
     </ScrollView>
   )
 }
+
+const style = StyleSheet.create({
+  container: {
+    flexGrow: 1,
+    backgroundColor: 'gainsboro',
+    padding: 10,
+    gap: 10,
+  },
+})
 
