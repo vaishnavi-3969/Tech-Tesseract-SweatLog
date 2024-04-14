@@ -92,4 +92,17 @@ Looking ahead, we envision several exciting opportunities for Sweatlog, includin
   With Sweatlog, users can embark on their fitness journey with confidence, knowing that they have a reliable companion to support them every step of the way. Whether you're a seasoned athlete or a beginner just starting, Sweatlog is your ultimate fitness companion for a healthier, happier you.
 </p>
   </div>
+<h1>Screenshots</h1>
+<img src = "https://github.com/vaishnavi-3969/Tech-Tesseract-SweatLog/assets/80088403/5bd0a3f6-c86d-4754-99ea-04c728c2d8e6"/>
+<img src = "https://github.com/vaishnavi-3969/Tech-Tesseract-SweatLog/assets/80088403/31fdf00d-a1de-4135-891f-99d893f83a49"/>
+<img src = "https://github.com/vaishnavi-3969/Tech-Tesseract-SweatLog/assets/80088403/6da1fec7-641d-4ef9-9529-28be1c3ebdb6"/>
+<img src = "https://github.com/vaishnavi-3969/Tech-Tesseract-SweatLog/assets/80088403/9765e023-5ea2-45e0-9278-9117e8ecbcf4"/>
+<img src = "https://github.com/vaishnavi-3969/Tech-Tesseract-SweatLog/assets/80088403/f1776df7-0673-4194-a6bd-29e5c611d757"/>
+<img src = "https://github.com/vaishnavi-3969/Tech-Tesseract-SweatLog/assets/80088403/ff45bfd0-7a89-4d46-83e0-92b61fb9dd71"/>
+<img src = "https://github.com/vaishnavi-3969/Tech-Tesseract-SweatLog/assets/80088403/9a9208f8-1774-4033-974d-4c02f0cc7371"/>
+<img src = "https://github.com/vaishnavi-3969/Tech-Tesseract-SweatLog/assets/80088403/3325681c-3dcf-4b9e-b8a8-5cad4f0c1c0e"/>
+<img src = "https://github.com/vaishnavi-3969/Tech-Tesseract-SweatLog/assets/80088403/28c8c2aa-9a2e-439e-bc83-c4ed77bb930f"/>
+
+
+
 </div>
