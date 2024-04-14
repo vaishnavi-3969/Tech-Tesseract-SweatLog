@@ -39,11 +39,13 @@ The inspiration behind Sweatlog stemmed from our collective desire to make fitne
 
 <h3>What It Does 🏋️‍♂️</h3>
 Sweatlog is your ultimate personal fitness companion. It provides users with a comprehensive platform to track, achieve, and thrive towards their fitness goals. With Sweatlog, users can:
-Explore a vast exercise library with detailed descriptions and instructional videos.
-Log their workouts seamlessly, including exercises performed, sets, reps, weights, and personal notes.
-Monitor their fitness progress with visual representations such as charts and graphs.
-Connect with a supportive community of fitness enthusiasts for motivation and inspiration.
-Access their workout data anytime, anywhere with seamless synchronization across multiple devices.
+<ul>
+<li>  Explore a vast exercise library with detailed descriptions and instructional videos.</li>
+<li>  Log their workouts seamlessly, including exercises performed, sets, reps, weights, and personal notes.</li>
+<li>Monitor their fitness progress with visual representations such as charts and graphs.</li>
+<li>Connect with a supportive community of fitness enthusiasts for motivation and inspiration.</li>
+<li>Access their workout data anytime, anywhere with seamless synchronization across multiple devices.</li>
+</ul>
 
 <h3>How We Built It 🛠️</h3>
 We built Sweatlog using a combination of React Native for the frontend, Firebase for backend services such as authentication and database management, and various other libraries and tools for enhanced functionality. Our development process involved extensive research, iterative design, and collaboration among team members to ensure a user-friendly and feature-rich application.
@@ -51,31 +53,39 @@ We built Sweatlog using a combination of React Native for the frontend, Firebase
 <h3>Challenges We Ran Into 🤔</h3>
 While developing Sweatlog, we encountered several challenges, including:
 Integrating complex features such as workout logging and data synchronization across multiple devices.
-Ensuring a seamless user experience across different platforms (iOS, Android, and web).
-Implementing robust security measures to protect user data and privacy.
-Optimizing performance and scalability to accommodate a growing user base.
+<ul>
+  <li>Ensuring a seamless user experience across different platforms (iOS, Android, and web).</li>
+  <li>Implementing robust security measures to protect user data and privacy.</li>
+  <li>Optimizing performance and scalability to accommodate a growing user base.</li>
+</ul>
 
 <h3>Accomplishments We Are Proud Of 🎉</h3>
 Despite the challenges, we're proud to have:
-Successfully developed a fully functional and feature-rich fitness tracking application.
-Received positive feedback from early users and fitness enthusiasts who found Sweatlog valuable in their fitness journey.
-Built a supportive community around Sweatlog, where users can interact, share their achievements, and inspire each other to stay active and healthy.
-Established partnerships with fitness experts and influencers to enhance the content and resources available on Sweatlog.
+<ul>
+<li>Successfully developed a fully functional and feature-rich fitness tracking application.</li>
+<li>Received positive feedback from early users and fitness enthusiasts who found Sweatlog valuable in their fitness journey.</li>
+<li>Built a supportive community around Sweatlog, where users can interact, share their achievements, and inspire each other to stay active and healthy.</li>
+<li>Established partnerships with fitness experts and influencers to enhance the content and resources available on Sweatlog.</li>
+</ul>
 
 <h3>What We Learned 📚</h3>
 Throughout the development process, we learned valuable lessons in:
-User experience design and usability testing to create an intuitive and engaging application interface.
-Firebase integration and backend development for managing user authentication, data storage, and synchronization.
-Agile development methodologies for iterative product development and continuous improvement.
-Community building and engagement strategies to foster a vibrant and supportive user community around Sweatlog.
+<ul>
+<li>User experience design and usability testing to create an intuitive and engaging application interface.</li>
+<li>Firebase integration and backend development for managing user authentication, data storage, and synchronization.</li>
+<li>Agile development methodologies for iterative product development and continuous improvement.</li>
+<li>Community building and engagement strategies to foster a vibrant and supportive user community around Sweatlog.</li>
+</ul>
 
 <h3>What's Next for Sweatlog 🔮</h3>
 Looking ahead, we envision several exciting opportunities for Sweatlog, including:
-Enhancing the exercise library with new content, including advanced workout routines and specialized training programs.
-Introducing personalized fitness plans and recommendations based on user goals, preferences, and progress.
-Integrating wearable devices and health trackers for seamless data synchronization and enhanced fitness tracking capabilities.
-Expanding the Sweatlog community through marketing initiatives, partnerships, and outreach efforts to reach a wider audience of fitness enthusiasts.
-Continuing to iterate on the app based on user feedback and market trends to ensure Sweatlog remains the go-to platform for fitness tracking and wellness management.
+<ul>
+<li>Enhancing the exercise library with new content, including advanced workout routines and specialized training programs.</li>
+<li>Introducing personalized fitness plans and recommendations based on user goals, preferences, and progress.</li>
+<li>Integrating wearable devices and health trackers for seamless data synchronization and enhanced fitness tracking capabilities.</li>
+<li>Expanding the Sweatlog community through marketing initiatives, partnerships, and outreach efforts to reach a wider audience of fitness enthusiasts.</li>
+<li>Continuing to iterate on the app based on user feedback and market trends to ensure Sweatlog remains the go-to platform for fitness tracking and wellness management.</li>
+</ul>
 
 <h3>Conclusion:</h3>
 <p>
