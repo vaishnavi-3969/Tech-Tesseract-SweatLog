@@ -17,12 +17,12 @@
     Data Synchronization: Sweatlog ensures seamless synchronization of workout data across multiple devices, allowing users to access their fitness logs and statistics anytime, anywhere. Whether at home, at the gym, or on the go, users can stay connected to their fitness goals with Sweatlog.
     </ul>
 <h3>Target Audience:</h3>
-1. Fitness enthusiasts looking for a convenient way to track their workouts and monitor their progress.
-Beginners seeking guidance on proper workout techniques and exercise routines.
-Individuals striving to maintain a healthy lifestyle and achieve their fitness goals.
-Conclusion:
-With Sweatlog, users can embark on their fitness journey with confidence, knowing that they have a reliable companion to support them every step of the way. Whether you're a seasoned athlete or a beginner just starting, Sweatlog is your ultimate fitness companion for a healthier, happier you.
+    Fitness enthusiasts looking for a convenient way to track their workouts and monitor their progress.
+    Beginners seeking guidance on proper workout techniques and exercise routines.
+    Individuals striving to maintain a healthy lifestyle and achieve their fitness goals.
 
+<h3>Conclusion:</h3>
+With Sweatlog, users can embark on their fitness journey with confidence, knowing that they have a reliable companion to support them every step of the way. Whether you're a seasoned athlete or a beginner just starting, Sweatlog is your ultimate fitness companion for a healthier, happier you.
   </div>
   
 </div>
