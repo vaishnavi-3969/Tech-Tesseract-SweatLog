@@ -6,6 +6,7 @@ const styles = StyleSheet.create({
       backgroundColor: 'gainsboro',
       justifyContent: 'center',
       padding: 10,
+      gap: 10,
     },
     exerciseContainer: {
       backgroundColor: 'white',
@@ -35,7 +36,16 @@ const styles = StyleSheet.create({
     },
     subValue : {
       textTransform: 'uppercase'
-    }
+    },
+    instructions:{
+      fontSize: 16,
+      lineHeight: 22,
+    },
+    panel:{
+      backgroundColor: 'white',
+      padding: 10,
+      borderRadius: 10,
+    },
   })
 
 
