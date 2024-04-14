@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { Link } from '@react-navigation/native'; 
 import { auth } from '../components/config';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 
-export default function SignupScreen({ navigation }) {
+export default function SignupScreen() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -11,9 +12,10 @@ export default function SignupScreen({ navigation }) {
     if (email && password) {
       try {
         await createUserWithEmailAndPassword(auth, email, password);
-        navigation.navigate('Login');
       } catch (err) {
-        console.log('error: ', err.message)
+        console.log('error: ', err.message);
+        // Show error popup
+        // Alert.alert('Error', err.message);
       }
     }
   };
@@ -37,6 +39,9 @@ export default function SignupScreen({ navigation }) {
       <TouchableOpacity style={styles.button} onPress={handleSignup}>
         <Text style={styles.buttonText}>Sign Up</Text>
       </TouchableOpacity>
+      <Link to="/Login"> {/* Use Link to navigate to the Login screen */}
+        <Text style={styles.switchText}>Already have an account? Login</Text>
+      </Link>
     </View>
   );
 }
@@ -73,5 +78,10 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontSize: 16,
     fontWeight: 'bold',
+  },
+  switchText: {
+    marginTop: 10,
+    color: 'blue',
+    textDecorationLine: 'underline',
   },
 });

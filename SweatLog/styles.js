@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
       borderRadius: 10,
     },
     seeMore: {
-      alignSet: 'center',
+      // alignSet: 'center',
       padding: 10,
       fontWeight: '600',
       color: 'gray',
