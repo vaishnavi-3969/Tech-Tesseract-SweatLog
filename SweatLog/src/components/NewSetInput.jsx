@@ -11,7 +11,7 @@ export default function NewSetInput() {
     console.warn("Add Set", reps, weight);
 
     //save data to db
-    
+
     setReps('');
     setWeight('')
   }

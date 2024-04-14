@@ -1,24 +1,16 @@
-import { StatusBar } from 'expo-status-bar';
-import { View, FlatList } from 'react-native';
-import styles from '../../styles';
-import exercises from '../../assets/data/exercises.json';
-import ExerciseListItem from '../components/ExerciseListItem';
+import { Link } from "expo-router";
+import { Button } from "react-native-web";
+import {useFonts} from 'expo-font';
+import * as SplashScreen from 'expo-splash-screen';
+
 
 export default function App() {
     return (
-        <View style={styles.container}>
-            <FlatList
-                data={exercises}
-                keyExtractor={(item, index) => item.name + index}
-                renderItem={({ item }) => {
-                    return (
-                        <ExerciseListItem item={item} />
-                    )
-                }}
-            />
-
-            <StatusBar style="auto" />
-        </View>
+       <Link href="Welcome">
+         <Button
+        title="Click me"
+        />
+       </Link>
     );
 }
 
