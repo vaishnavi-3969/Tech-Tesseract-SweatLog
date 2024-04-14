@@ -3,17 +3,41 @@ import { View, Text, ScrollView, StyleSheet } from 'react-native'
 import exercises from '../../assets/data/exercises.json';
 import styles from '../../styles';
 import { Stack } from "expo-router";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import NewSetInput from '../components/NewSetInput';
+import { getDatabase, ref, onValue } from 'firebase/database';
 
 export default function ExerciseDetailsScreen() {
   const params = useLocalSearchParams();
   const [isIntructionExpanded, setIsInstructionExpanded] = useState(false);
   const exercise = exercises.find(item => item.name === params.name)
+  const [exerciseSets, setExerciseSets] = useState([]);
 
-  if (!exercise) {
-    return <Text>Exercise not found!</Text>
-  }
+  useEffect(() => {
+    const fetchData = () => {
+      const db = getDatabase();
+      const setsRef = ref(db, `users/vaishnavikale3011gmailcom/sets`);
+      onValue(setsRef, (snapshot) => {
+        const data = snapshot.val();
+        if (data) {
+          const sets = Object.values(data);
+          setExerciseSets(sets);
+        } else {
+          setExerciseSets([]);
+        }
+      });
+    };
+
+    fetchData();
+
+    // Clean up the listener
+    return () => {
+      const db = getDatabase();
+      const setsRef = ref(db, `users/vaishnavikale3011gmailcom/sets`);
+      onValue(setsRef, null);
+    };
+  }, []);
+
   return (
     <ScrollView contentContainerStyle={style.container}>
       <Stack.Screen
@@ -36,7 +60,12 @@ export default function ExerciseDetailsScreen() {
         </Text>
       </View>
 
-      <NewSetInput/>
+      <NewSetInput />
+      {exerciseSets.map((set, index) => (
+        <View key={index} style={styles.setContainer}>
+          <Text>Set {index + 1}: Reps - {set.reps}, Weight - {set.weight}</Text>
+        </View>
+      ))}
     </ScrollView>
   )
 }

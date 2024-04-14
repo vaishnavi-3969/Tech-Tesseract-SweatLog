@@ -1,36 +1,29 @@
-import { View, TextInput, Button, StyleSheet } from 'react-native';
 import React, { useState } from 'react';
-import { getDatabase, ref, push } from "firebase/database";
-import { app } from '../components/config';
+import { View, TextInput, Button, StyleSheet } from 'react-native';
+import { getDatabase, ref, push, set } from "firebase/database";
+import { auth } from '../components/config';
 
 export default function NewSetInput() {
   const [reps, setReps] = useState('');
   const [weight, setWeight] = useState('');
 
-  const db = getDatabase(app);
-
-  const addSet = () => {
-    console.warn("Add Set", reps, weight);
-
-    // Save data to Firebase
-    saveSetToFirebase(reps, weight);
-
-    // Clear input fields after adding set
-    setReps('');
-    setWeight('');
-  }
-
-  const saveSetToFirebase = (reps, weight) => {
-    const setsRef = ref(db, 'sets');
-    push(setsRef, {
-      reps: reps,
-      weight: weight
-    }).then(() => {
-      console.log('Set added to Firebase');
-    }).catch((error) => {
-      console.error('Error adding set to Firebase: ', error);
-    });
-  }
+  const saveSet = async () => {
+    try {
+      const db = getDatabase();
+      const setsRef = ref(db, `sets/${auth.currentUser.uid}`);
+      const newSetRef = push(setsRef);
+      await set(newSetRef, {
+        reps: parseInt(reps),
+        weight: parseInt(weight),
+        timestamp: new Date().toISOString()
+      });
+      console.log('Set saved successfully!');
+      setReps('');
+      setWeight('');
+    } catch (error) {
+      console.error('Error saving set:', error);
+    }
+  };
 
   return (
     <View style={styles.container}>
@@ -50,24 +43,24 @@ export default function NewSetInput() {
       />
       <Button
         title='Add'
-        onPress={addSet}
+        onPress={saveSet}
       />
     </View>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'white',
-    padding: 10,
-    borderRadius: 5,
     flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: 10,
   },
   input: {
+    flex: 1,
+    marginRight: 10,
     borderWidth: 1,
     borderRadius: 5,
     padding: 10,
-    flex: 1,
-    marginHorizontal: 5,
   },
 });
