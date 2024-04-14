@@ -6,7 +6,8 @@ export default function RootLayout() {
         <Stack>
             <Stack.Screen
                 name="index"
-                options={{ title: "Sweat Log" }} />
+                options={{ title: "Sweat Log" }} 
+                />
         </Stack>
     );
 }

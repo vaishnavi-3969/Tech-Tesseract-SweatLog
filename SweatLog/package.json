@@ -17,6 +17,7 @@
     "expo-linking": "~6.2.2",
     "expo-router": "~3.4.3",
     "expo-status-bar": "~1.11.1",
+    "firebase": "^10.11.0",
     "graphql": "^15.8.0",
     "graphql-request": "^6.1.0",
     "mongodb": "^6.5.0",
