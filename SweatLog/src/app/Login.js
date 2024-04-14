@@ -1,18 +1,21 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
-import { Link } from '@react-navigation/native'; // Import Link from React Navigation
+import { Link, useNavigation } from '@react-navigation/native'; // Import Link and useNavigation from React Navigation
 import { auth } from '../components/config';
 import { signInWithEmailAndPassword } from 'firebase/auth';
+import { Button } from 'react-native-web';
 
 export default function LoginScreen() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [loggedIn, setLoggedIn] = useState(false); // State to track login status
+  const navigation = useNavigation(); // Initialize navigation hook
 
   const handleLogin = async () => {
     if (email && password) {
       try {
         await signInWithEmailAndPassword(auth, email, password);
-        navigation.navigate('/Login');
+        setLoggedIn(true); // Set login status to true upon successful login
       } catch (err) {
         console.log('error: ', err.message);
         // Alert.alert('Error', err.message);
@@ -37,13 +40,15 @@ export default function LoginScreen() {
         secureTextEntry
       />
       <TouchableOpacity style={styles.button} onPress={handleLogin}>
-        <Link to="/Welcome">
-          <Text style={styles.buttonText}>Login</Text>
-        </Link>
+        <Text style={styles.buttonText}>Login</Text>
       </TouchableOpacity>
       <Link to="/Signup">
         <Text style={styles.switchText}>Don't have an account? Sign Up</Text>
       </Link>
+      <Text>Login successfull!</Text>
+      {loggedIn && ( 
+          <Button title='Go to Home' onPress={() => navigation.navigate('Welcome')} />
+      )}
     </View>
   );
 }
