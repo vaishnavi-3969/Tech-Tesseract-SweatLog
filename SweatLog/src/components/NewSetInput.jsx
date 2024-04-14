@@ -3,16 +3,17 @@ import { View, TextInput, Button, StyleSheet } from 'react-native';
 import { getDatabase, ref, push, set } from "firebase/database";
 import { auth } from '../components/config';
 
-export default function NewSetInput() {
+export default function NewSetInput({ exerciseName }) {
   const [reps, setReps] = useState('');
   const [weight, setWeight] = useState('');
 
   const saveSet = async () => {
     try {
       const db = getDatabase();
-      const setsRef = ref(db, `sets/${auth.currentUser.uid}`);
+      const setsRef = ref(db, `users/${auth.currentUser.uid}/sets`);
       const newSetRef = push(setsRef);
       await set(newSetRef, {
+        exerciseName: exerciseName,
         reps: parseInt(reps),
         weight: parseInt(weight),
         timestamp: new Date().toISOString()

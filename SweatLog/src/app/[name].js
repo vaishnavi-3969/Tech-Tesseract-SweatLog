@@ -13,6 +13,7 @@ export default function ExerciseDetailsScreen() {
   const [isIntructionExpanded, setIsInstructionExpanded] = useState(false);
   const exercise = exercises.find(item => item.name === params.name)
   const [exerciseSets, setExerciseSets] = useState([]);
+  const [timestamp, setTimestamp] = useState('');
 
   useEffect(() => {
     const fetchData = () => {
@@ -23,6 +24,7 @@ export default function ExerciseDetailsScreen() {
         if (data) {
           const sets = Object.values(data);
           setExerciseSets(sets);
+          setTimestamp(new Date().toISOString()); // Set timestamp
         } else {
           setExerciseSets([]);
         }
@@ -31,12 +33,6 @@ export default function ExerciseDetailsScreen() {
 
     fetchData();
 
-    // Clean up the listener
-    return () => {
-      const db = getDatabase();
-      const setsRef = ref(db, `users/${auth.currentUser.uid}/sets`);
-      onValue(setsRef, null);
-    };
   }, []);
 
   return (
@@ -44,6 +40,7 @@ export default function ExerciseDetailsScreen() {
       <Stack.Screen
         options={{ title: exercise.name }}
       />
+      <Text style={styles.timestamp}>{timestamp}</Text> {/* Display timestamp */}
       <View style={styles.panel}>
         <Text style={styles.exerciseName}>{exercise.name}</Text>
         <Text style={styles.exerciseDetails}>
@@ -61,10 +58,10 @@ export default function ExerciseDetailsScreen() {
         </Text>
       </View>
 
-      <NewSetInput />
+      <NewSetInput exerciseName={exercise.name} />
       {exerciseSets.map((set, index) => (
         <View key={index} style={styles.setContainer}>
-          <Text>Set {index + 1}: Reps - {set.reps}, Weight - {set.weight}</Text>
+          <Text>{set.exerciseName} - Set {index + 1}: Reps - {set.reps}, Weight - {set.weight}, Timestamp - {set.timestamp}</Text>
         </View>
       ))}
     </ScrollView>
@@ -79,4 +76,3 @@ const style = StyleSheet.create({
     gap: 10,
   },
 })
-
