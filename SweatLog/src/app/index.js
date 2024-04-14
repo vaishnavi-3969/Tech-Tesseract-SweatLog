@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { useNavigation } from '@react-navigation/native';
 
 export default function App() {
-
+    
     const [fadeAnim] = useState(new Animated.Value(0));
     useEffect(() => {
         SplashScreen.preventAutoHideAsync();
