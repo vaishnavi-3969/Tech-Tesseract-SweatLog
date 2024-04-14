@@ -6,6 +6,7 @@ import { Stack } from "expo-router";
 import { useEffect, useState } from 'react';
 import NewSetInput from '../components/NewSetInput';
 import { getDatabase, ref, onValue } from 'firebase/database';
+import { auth } from '../components/config';
 
 export default function ExerciseDetailsScreen() {
   const params = useLocalSearchParams();
@@ -16,7 +17,7 @@ export default function ExerciseDetailsScreen() {
   useEffect(() => {
     const fetchData = () => {
       const db = getDatabase();
-      const setsRef = ref(db, `users/vaishnavikale3011gmailcom/sets`);
+      const setsRef = ref(db, `users/${auth.currentUser.uid}/sets`);
       onValue(setsRef, (snapshot) => {
         const data = snapshot.val();
         if (data) {
@@ -33,7 +34,7 @@ export default function ExerciseDetailsScreen() {
     // Clean up the listener
     return () => {
       const db = getDatabase();
-      const setsRef = ref(db, `users/vaishnavikale3011gmailcom/sets`);
+      const setsRef = ref(db, `users/${auth.currentUser.uid}/sets`);
       onValue(setsRef, null);
     };
   }, []);
