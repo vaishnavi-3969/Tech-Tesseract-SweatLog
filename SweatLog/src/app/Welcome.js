@@ -12,7 +12,7 @@ export default function Welcome() {
         <View style={styles.container}>
             <Text>User Email: {auth.currentUser.email}</Text>
             <Text>User ID: {auth.currentUser.uid}</Text>
-            \
+            
             <FlatList
                 data={exercises}
                 keyExtractor={(item, index) => item.name + index}
