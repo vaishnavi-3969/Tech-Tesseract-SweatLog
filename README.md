@@ -4,7 +4,10 @@
   <h2>Track: Health and Wellness</h2>
   <h4>Year: 4th</h4>
   <p>Elevate your fitness journey with Sweatlog: Your Personal Fitness Companion. Track, achieve, and thrive towards your fitness goals effortlessly. Stay motivated, stay inspired, and unlock your true potential with Sweatlog</p>
+  <h1>Tools and Technologies</h1>
+    <img src="https://skillicons.dev/icons?i=react,firebase,git,github,js" />
   <div align='left'>
+<h1>Project Description</h1>
 <p>
   In today's fast-paced world, maintaining a healthy lifestyle and staying fit has become increasingly challenging. People often struggle to track their workouts, set achievable fitness goals, and stay motivated on their fitness journey. Moreover, accessing reliable information about exercises and proper workout techniques can be overwhelming for beginners.To address these challenges, we present Sweatlog - a comprehensive fitness tracking and workout logging application. Sweatlog aims to empower users to take control of their fitness journey by providing them with the tools and resources they need to achieve their fitness goals effectively and efficiently.
 </p>
