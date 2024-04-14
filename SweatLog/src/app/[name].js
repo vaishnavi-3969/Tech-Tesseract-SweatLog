@@ -1,11 +1,13 @@
 import { useLocalSearchParams } from 'expo-router';
-import { View, Text,ScrollView } from 'react-native'
+import { View, Text, ScrollView } from 'react-native'
 import exercises from '../../assets/data/exercises.json';
 import styles from '../../styles';
 import { Stack } from "expo-router";
+import { useState } from 'react';
 
 export default function ExerciseDetailsScreen() {
   const params = useLocalSearchParams();
+  const [isIntructionExpanded, setIsInstructionExpanded] = useState(false);
   const exercise = exercises.find(item => item.name === params.name)
 
   if (!exercise) {
@@ -25,8 +27,11 @@ export default function ExerciseDetailsScreen() {
       </View>
 
       <ScrollView style={styles.panel}>
-        <Text style={styles.instructions}>
+        <Text style={styles.instructions} numberOfLines={isIntructionExpanded ? 0 : 3}>
           {exercise.instructions}
+        </Text>
+        <Text onPress={() => setIsInstructionExpanded(!isIntructionExpanded)} style={styles.seeMore}>
+          {isIntructionExpanded ? "See Less" : "See More"}
         </Text>
       </ScrollView>
     </ScrollView>

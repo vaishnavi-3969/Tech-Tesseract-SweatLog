@@ -46,6 +46,12 @@ const styles = StyleSheet.create({
       padding: 10,
       borderRadius: 10,
     },
+    seeMore: {
+      alignSet: 'center',
+      padding: 10,
+      fontWeight: '600',
+      color: 'gray',
+    }
   })
 
 
