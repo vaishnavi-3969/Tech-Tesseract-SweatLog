@@ -106,6 +106,6 @@ Looking ahead, we envision several exciting opportunities for Sweatlog, includin
 <img src = "https://github.com/vaishnavi-3969/Tech-Tesseract-SweatLog/assets/80088403/3325681c-3dcf-4b9e-b8a8-5cad4f0c1c0e"/>
 <img src = "https://github.com/vaishnavi-3969/Tech-Tesseract-SweatLog/assets/80088403/28c8c2aa-9a2e-439e-bc83-c4ed77bb930f"/>
 
-
+<a href="https://www.youtube.com/embed/H5w1__XPR1k?si=SDwiO5HOT4XEWUMe">Project Demo</a>
 
 </div>
